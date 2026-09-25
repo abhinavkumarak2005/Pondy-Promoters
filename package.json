@@ -1,0 +1,12 @@
+{
+  "name": "pondy-promoters-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Unified build for Pondy Promoters Web and Admin",
+  "scripts": {
+    "install:all": "cd PPWeb && npm install && cd ../PPAdmin && npm install",
+    "build:web": "cd PPWeb && npm run build",
+    "build:admin": "cd PPAdmin && npm run build",
+    "build": "npm run install:all && npm run build:web && npm run build:admin && rm -rf dist && mkdir -p dist && cp -R PPWeb/dist/* dist/ && mkdir -p dist/admin && cp -R PPAdmin/dist/* dist/admin/"
+  }
+}
